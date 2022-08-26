@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import { ReactDOM } from 'react';
 
 class App extends React.Component {
   
@@ -17,7 +16,17 @@ class App extends React.Component {
 const Editor = () => {
   return (
     <div className='box'>
-      <h1>Wow</h1>
+      <div className='heading'>
+        <h1>Editor</h1>
+      </div>
+      <hr></hr>
+      <div className='mainText'>
+        <textarea
+          id="editor"
+          value="what do you want?"
+        >
+        </textarea>
+      </div>
     </div>  
   )
 }
@@ -25,7 +34,12 @@ const Editor = () => {
 const Preview = () => {
   return (
     <div className='box'>
-      <h1>No Way</h1>
+      <div className='heading'>
+        <h1>Markdown Preview</h1>
+      </div>
+      <hr></hr>
+      <div className='mainText'>
+      </div>
     </div>
   )
 }
