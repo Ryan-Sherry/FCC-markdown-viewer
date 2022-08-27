@@ -2,11 +2,22 @@ import './App.css';
 import React from 'react';
 
 class App extends React.Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: placeholder,
+    }
+  }
+    handleChange = this.handleChange.bind(this);
+    handleChange(e) {
+      this.setState({
+        input: e.target.value
+      })
+    }
   render() {
     return (
       <div className="App">
-        <Editor />
+        <Editor input={this.state.input}/>
         <Preview />
       </div>
     );
@@ -23,7 +34,7 @@ const Editor = () => {
       <div className='mainText'>
         <textarea
           id="editor"
-          value="what do you want?"
+          value={placeholder}
         >
         </textarea>
       </div>
@@ -39,6 +50,7 @@ const Preview = () => {
       </div>
       <hr></hr>
       <div className='mainText'>
+
       </div>
     </div>
   )
