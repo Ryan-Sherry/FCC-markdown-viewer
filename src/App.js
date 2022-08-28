@@ -2,6 +2,8 @@ import './App.css';
 import React from 'react';
 import { marked } from 'marked';
 
+
+//Allows for line breaks in markdown
 marked.setOptions({
   breaks: true,
 });
@@ -12,6 +14,7 @@ class App extends React.Component {
     this.state = {
       input: placeholder
     }
+    //Needs to fall within constructor braces
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -23,6 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        {/*assign a prop to each child component with "this"*/}
         <Editor value={this.state.input} onChange={this.handleChange}/>
         <Preview value={this.state.input}/>
       </div>
@@ -41,7 +45,8 @@ const Editor = (props) => {
         <textarea
           id="editor"
           onChange={props.onChange}
-        >
+        >{/*reference the parent components properties, where prop name
+          is whatever was assigned to it in the parent component JSX*/}
           {props.value}
         </textarea>
       </div>
@@ -50,6 +55,7 @@ const Editor = (props) => {
 }
 
 const Preview = (props) => {
+  //this const makes the markdown conversion function more readable
   const toMarkDown = props.value;
   return (
     <div className='box'>
@@ -58,6 +64,8 @@ const Preview = (props) => {
       </div>
       <hr></hr>
       <div id='previewText' className='mainTextRight'>
+        {/*converts your input constant markdown file into html,
+          but apparently vulnerable to cross-site scripting*/}
         <div id='preview' dangerouslySetInnerHTML={{ __html: marked.parse(toMarkDown)}}></div>
       </div>
     </div>
