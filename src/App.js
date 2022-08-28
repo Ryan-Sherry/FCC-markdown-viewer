@@ -37,7 +37,7 @@ const Editor = (props) => {
         <h1>Editor</h1>
       </div>
       <hr></hr>
-      <div className='mainText'>
+      <div className='mainTextLeft'>
         <textarea
           id="editor"
           onChange={props.onChange}
@@ -57,8 +57,8 @@ const Preview = (props) => {
         <h1>Markdown Preview</h1>
       </div>
       <hr></hr>
-      <div id='preview' className='mainText'>
-        <div id='previewText' dangerouslySetInnerHTML={{ __html: marked.parse(toMarkDown)}}></div>
+      <div id='previewText' className='mainTextRight'>
+        <div id='preview' dangerouslySetInnerHTML={{ __html: marked.parse(toMarkDown)}}></div>
       </div>
     </div>
   )
