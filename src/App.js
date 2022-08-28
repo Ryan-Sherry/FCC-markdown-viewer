@@ -5,10 +5,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: placeholder,
+      input: placeholder
     }
+    this.handleChange = this.handleChange.bind(this);
   }
-    handleChange = this.handleChange.bind(this);
+
     handleChange(e) {
       this.setState({
         input: e.target.value
@@ -17,14 +18,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Editor input={this.state.input}/>
-        <Preview />
+        <Editor value={this.state.input} onChange={this.handleChange}/>
+        <Preview value={this.state.input}/>
       </div>
     );
   }
 }
 
-const Editor = () => {
+const Editor = (props) => {
   return (
     <div className='box'>
       <div className='heading'>
@@ -34,23 +35,25 @@ const Editor = () => {
       <div className='mainText'>
         <textarea
           id="editor"
-          value={placeholder}
+          onChange={props.onChange}
         >
+          {props.value}
         </textarea>
       </div>
     </div>  
   )
 }
 
-const Preview = () => {
+const Preview = (props) => {
+  
   return (
     <div className='box'>
       <div className='heading'>
         <h1>Markdown Preview</h1>
       </div>
       <hr></hr>
-      <div className='mainText'>
-
+      <div id='preview' className='mainText'>
+        <p>{props.value}</p>
       </div>
     </div>
   )
