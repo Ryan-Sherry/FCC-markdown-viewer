@@ -53,6 +53,8 @@ textarea {
   height:80%;
   width:80%;
   padding-top:30px;
+  border:none;
+  border-radius: 10px;
 }
 
 #previewText {
