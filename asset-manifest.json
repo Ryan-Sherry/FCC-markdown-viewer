@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/FCC-markdown-viewer/static/css/main.5c3c76c8.css",
+    "main.js": "/FCC-markdown-viewer/static/js/main.718c8870.js",
+    "index.html": "/FCC-markdown-viewer/index.html",
+    "main.5c3c76c8.css.map": "/FCC-markdown-viewer/static/css/main.5c3c76c8.css.map",
+    "main.718c8870.js.map": "/FCC-markdown-viewer/static/js/main.718c8870.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c3c76c8.css",
+    "static/js/main.718c8870.js"
+  ]
+}
