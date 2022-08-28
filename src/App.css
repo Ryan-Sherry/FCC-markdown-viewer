@@ -40,3 +40,14 @@ hr {
   background-color: rgba(0, 103, 151, 0.801);
   text-align: center;
 }
+
+#preview {
+  display:flex;
+  overflow: auto;
+}
+
+#previewText {
+  height: 100%;
+  width:100%;
+  
+}

@@ -1,5 +1,10 @@
 import './App.css';
 import React from 'react';
+import { marked } from 'marked';
+
+marked.setOptions({
+  breaks: true,
+});
 
 class App extends React.Component {
   constructor(props) {
@@ -45,7 +50,7 @@ const Editor = (props) => {
 }
 
 const Preview = (props) => {
-  
+  const toMarkDown = props.value;
   return (
     <div className='box'>
       <div className='heading'>
@@ -53,7 +58,7 @@ const Preview = (props) => {
       </div>
       <hr></hr>
       <div id='preview' className='mainText'>
-        <p>{props.value}</p>
+        <div id='previewText' dangerouslySetInnerHTML={{ __html: marked.parse(toMarkDown)}}></div>
       </div>
     </div>
   )
